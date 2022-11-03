@@ -1,0 +1,1 @@
+package com.k2web.k2webboard.service;import org.springframework.stereotype.Repository;import org.springframework.stereotype.Service;@Servicepublic class ReplyService {}

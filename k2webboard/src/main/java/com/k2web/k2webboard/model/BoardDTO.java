@@ -1,0 +1,1 @@
+package com.k2web.k2webboard.model;import lombok.Data;import java.sql.Timestamp;@Datapublic class BoardDTO {    private int boardId;    private int writerId;    private String title;    private String content;    private int view;    private int good;    private Timestamp updatedDate;    private Timestamp writtenDate;}

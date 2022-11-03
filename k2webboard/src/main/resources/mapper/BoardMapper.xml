@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.BoardMapper">
+
+    <select id="selectAll" resultType= "com.k2web.k2webboard.model.BoardDTO" parameterType = "hashMap" >
+        SELECT * FROM board LIMIT #{startNum}, #{PAGE_SIZE}
+    </select>
+
+    <select id = "selectOne" resultType = "com.k2web.k2webboard.model.BoardDTO" parameterType = "int">
+        SELECT * FROM board WHERE board_id = #{boardId}
+    </select>
+
+    <insert id = "insert" parameterType= "BoardDTO">
+        INSERT INTO board(writer_id, title, content)
+        VALUES(#{writerId}, #{title}, #{content})
+    </insert>
+
+    <select id = "count" resultType = "int">
+        SELECT COUNT(*) FROM board
+    </select>
+
+    <update id="update" parameterType= "com.k2web.k2webboard.model.BoardDTO">
+        UPDATE board SET title = #{title}, content = #{content} , updatedDate = NOW()
+        WHERE board_id = #{boardId}
+    </update>
+
+    <delete id="delete" parameterType = "int">
+        DELETE FROM board WHERE board_id = #{boardId}
+    </delete>
+
+    <insert id="init" parameterType= "com.k2web.k2webboard.model.BoardDTO">
+        INSERT INTO board(writer_id, title, content)
+        VALUES(#{8}, #{title}, #{content})
+    </insert>
+
+</mapper>

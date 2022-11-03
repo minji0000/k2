@@ -1,0 +1,1 @@
+package com.k2web.k2webboard.controller;import org.springframework.stereotype.Controller;@Controllerpublic class ReplyController {}
