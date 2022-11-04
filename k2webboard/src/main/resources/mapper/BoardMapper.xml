@@ -11,7 +11,7 @@
         SELECT * FROM board WHERE board_id = #{boardId}
     </select>
 
-    <insert id = "insert" parameterType= "BoardDTO">
+    <insert id = "insert" parameterType= "com.k2web.k2webboard.model.BoardDTO">
         INSERT INTO board(writer_id, title, content)
         VALUES(#{writerId}, #{title}, #{content})
     </insert>
