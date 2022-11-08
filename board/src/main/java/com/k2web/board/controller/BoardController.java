@@ -117,6 +117,13 @@ public class BoardController {
     return "redirect:/board/showOne/" + boardId;
   }
 
+  @RequestMapping("/test")
+  private String test(Model model) {
+    BoardDTO b = boardService.selectOne(20);
+    model.addAttribute("b", b);
+    return "index";
+  }
+
 
 
   @RequestMapping("/init")
@@ -126,7 +133,7 @@ public class BoardController {
       // 작성자의 아이디를 설정해주는 코드
       b.setWriterId(2);
       b.setTitle(i + "번째 게시글입니다.");
-      b.setContent(i + "번째 게시글의 내용입니다 ! ! 다다다다다다");
+      b.setContent(i + "번째 게시글의 내용입니다 ! !");
 
       boardService.insert(b);
     }
